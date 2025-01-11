@@ -49,7 +49,7 @@ _Reality is your canvas_
 
 ---
 
-## 🧪 InSpatial Test
+## 🧪 InSpatial Test (🟡 Preview)
 
 A universal testing framework that works seamlessly across Deno, Node.js, and Bun runtimes. Write tests once, run them anywhere - from mobile to desktop, and 3D/spatial environments!
 
@@ -80,28 +80,37 @@ A universal testing framework that works seamlessly across Deno, Node.js, and Bu
 - 🏷️ Type Assertions (Assert & Expect) 
 
 
-## 🚀 Installation
+## 📦 Install InSpatial Test:
 
 Choose your preferred package manager:
 
 ```bash
-# Deno
-deno add jsr:@inspatial/test
-
-# npm
-npx jsr add @inspatial/test
-
-# yarn
-yarn dlx jsr add @inspatial/test
-
-# pnpm
-pnpm dlx jsr add @inspatial/test
-
-# bun
-bunx jsr add @inspatial/test
+deno install jsr:@inspatial/test
 ```
 
----
+## 
+
+```bash
+npx jsr add @inspatial/test
+```
+
+## 
+
+```bash
+yarn dlx jsr add @inspatial/test
+```
+
+## 
+
+```bash
+pnpm dlx jsr add @inspatial/test
+```
+
+## 
+
+```bash
+bunx jsr add @inspatial/test
+```
 
 ## 🛠️ Usage
 
@@ -198,8 +207,6 @@ test("using both assertion styles", () => {
 })
 ```
 
----
-
 ## 🏃 Running Tests
 
 ### Basic Usage
@@ -249,8 +256,6 @@ deno test --watch
 node --test --watch
 bun test --watch
 ```
-
----
 
 ## ⚙️ CI Configuration
 
@@ -311,7 +316,6 @@ jobs:
           npx --yes tsx --test *.test.ts
 ```
 
----
 
 ## 📚 API Reference
 

@@ -32,7 +32,37 @@
 
 ---
 
-## 🎯 Core Principles
+## 📋 Table of Contents
+
+- [💫 Core Principles](#-core-principles)
+- [📚 Code Standards](#-code-standards)
+
+  - [📦 ESM Modules Only](#-esm-modules-only)
+  - [🔒 Deno APIs](#-deno-apis)
+  - [📝 Simple File Names](#-simple-file-names)
+  - [⚡ Type Performance](#-type-performance)
+  - [🚫 Dependencies](#-dependencies)
+  
+  - [Technical Standards](#technical-standards)
+    - [🎨 Shaders](#-shaders)
+    - [🔄 Programming Patterns](#-programming-patterns)
+    - [✍️ Variable Naming](#️-variable-naming)
+    - [📁 File Structure](#-file-structure)
+  - [InSpatial Ecosystem](#inspatial-ecosystem)
+
+- [🏷️ Naming Conventions](#️-naming-conventions)
+  - [General Rules](#general-rules)
+  
+- [✏️ TypeScript](#-typescript)
+  - [Type Definitions](#type-definitions)
+  - [Compiler Configuration](#compiler-configuration)
+  - [Best Practices](#best-practices)
+- [🧪 Test Structure and Organization](#-test-structure-and-organization)
+- [💭 Comments](#-comments)
+
+---
+
+## 💫 Core Principles
 
 | Principle | Description |
 |-----------|-------------|
@@ -41,116 +71,113 @@
 | **Self-Explanatory Code** | Write intuitive code that requires minimal comments |
 | **Comprehensive Documentation** | Document following [InSpatial Doc Rules](.inspatialdocrules) |
 
----
 
 ## 📚 Code Standards
 
-1. ### ESM Modules Only  
-   Avoid using CommonJS modules. Use ECMAScript Modules (ESM) for all imports and exports.
+| Standard | Description | Guidelines |
+|----------|-------------|------------|
+| 📦 **ESM Modules** | Use ECMAScript Modules exclusively | • Avoid CommonJS modules<br>• Use `import/export` syntax |
+| 🔒 **Deno APIs** | Prefer Deno over Node.js APIs | • Use provided Deno API abstractions<br>• Follow secure practices |
+| 📝 **File Names** | Cross-platform compatible naming | • Avoid `*`, `:`, `?`<br>• No case-only differences<br>• Use kebab-case |
+| ⚡ **Type Performance** | Avoid "slow types" | • Follow [JSR slow types guide](https://jsr.io/docs/about-slow-types)<br>• Use efficient type patterns <br>• Follow [Typescript's Performance Rules](https://github.com/microsoft/TypeScript/wiki/Performance) |
+| 🚫 **Dependencies** | No native binary dependencies | • Pure TypeScript preferred<br>• Use WASM for native functionality |
 
-2. ### Prefer Deno APIs  
-   Where applicable, use Deno APIs over Node.js APIs to align with modern, secure practices we provide abstractions to make it easier to use Deno APIs.
+### Technical Standards
 
-3. ### Simple File Names  
-   File names must be compatible with both Windows and Unix. Avoid characters like `*`, `:`, or `?`. Files with the same name but different casing are not allowed.
+| Category | Guidelines | Tools & Resources |
+|----------|------------|-------------------|
+| 🎨 **Shaders** | • Use WGSL or TSL<br>• WebGL 2.0 compatibility | [@inspatial/util](https://inspatial.dev/) |
+| 🔄 **Programming Patterns** | • Functional programming<br>• Declarative patterns | [Patterns.dev](https://www.patterns.dev/) |
+| ✍️ **Variable Naming** | • Use auxiliary verbs<br>• Self-documenting names | Examples:<br>`isLoading`<br>`hasError` |
+| 📁 **File Structure** | 1. Exported components<br>2. Subcomponents<br>3. Helpers<br>4. Static content<br>5. Types | Keep consistent order |
 
-4. ### No `"Slow Types"`  
-   Avoid "slow types" as defined in [Slow Types](https://jsr.io/docs/about-slow-types).
+### InSpatial Ecosystem
 
-5. ### No Native Binaries  
-   - Avoid dependencies that require native binaries or compilation
-   - Use pure JavaScript/TypeScript alternatives where possible
-   - Use WebAssembly (WASM) modules when native functionality is absolutely required
-
-6. ### Shader Standards  
-   - Use **WebGPU Shading Language (WGSL)** or supersets like **Three Shading Language (TSL)** with backwards compatibility for WebGL 2.0 (GLSL).  
-   - Helpers in the [@inspatial/util](https://inspatial.dev/) package can assist with this.
-
-7. ### Functional and Declarative Patterns  
-   Adhere to functional and declarative programming patterns. Refer to [Patterns.dev](https://www.patterns.dev/) for guidance.
-
-8. ### Descriptive Variable Names  
-   Use meaningful names with auxiliary verbs (e.g., `isLoading`, `hasError`).
-
-9. ### File Structure  
-    - Exported components first
-    - Subcomponents next
-    - Helpers, static content, and types last
-
-10. ### Use InSpatial Tooling 
-    - For constructing components, use [InSpatial Kit](https://inspatial.dev/kit).  
-    - For styling, use [InSpatial ISS](https://inspatial.dev/iss).
-    - Use [InSpatial Util](https://inspatial.dev/util) for all utilities.
-    - Use [InSpatial Infetch](https://inspatial.dev/infetch) for all HTTP requests.
-
-11. ### Animations  
-    Use [Motion](https://motion.dev/) for all animations and transitions(javascript only).
-
----
-
-## Typescript
-
-- Use **ES6+ syntax**: arrow functions, destructuring, template literals, etc.
-- Avoid `any` unless absolutely necessary. Use strict and explicit typing.
-
-
-**Example:**
-```typescript
-// ✅ Do: Use ES6+ syntax with strict typing
-const fetchData = (id: string): Promise<Data> => {
-  return inFetch(`/api/data/${id}`).then((response) => response.json());
-};
-
-// ❌ Don't: Use loose typing or older syntax
-function fetchData(id) {
-  return inFetch(`/api/data/${id}`).then((response) => response.json());
-}
-```
+| Tool | Purpose | Usage |
+|------|---------|-------|
+| [InSpatial Kit](https://inspatial.dev/kit) | Component Construction | Primary UI building blocks |
+| [InSpatial ISS](https://inspatial.dev/iss) | Styling | Styling system |
+| [InSpatial Util](https://inspatial.dev/util) | Utilities | Common utilities |
+| [InSpatial Infetch](https://inspatial.dev/infetch) | HTTP Requests | API communication |
+| [Motion](https://motion.dev/) | Animations | JavaScript animations & transitions |
 
 ---
 
 ## 🏷️ Naming Conventions
 
+| Type | Convention | Example | Additional Rules |
+|------|------------|---------|-----------------|
+| Variables | camelCase | `userData` | Use descriptive names that convey intent |
+| Components | PascalCase | `UserProfile` | - |
+| Files/Directories | kebab-case | `user-profile.ts` | - |
+| Types/Interfaces | PascalCase + Prop | `UserProp` | Must start with uppercase letter |
+| Private Variables | underscore prefix | `_privateData` | - |
+| Functions | camelCase | `fetchUserData` | - |
+| Constants | SCREAMING_SNAKE_CASE | `MAX_RETRY_COUNT` | - |
+| Boolean Variables | camelCase with prefix | `isLoading`, `hasError` | Use prefixes: is, has, should, can, etc. |
+| Event Handlers | camelCase with 'handle' prefix | `handleClick` | - |
 
-| Type | Convention | Example |
-|------|------------|---------|
-| Variables | camelCase | `userData` |
-| Components | PascalCase | `UserProfile` |
-| Files/Directories | kebab-case | `user-profile.ts` |
-| Types/Interfaces | PascalCase + Prop | `UserProp` |
-| Private Variables | underscore prefix | `_privateData` |
+
+### General Rules
+- Avoid abbreviations unless widely understood (e.g., `id` is fine, but `usr` is not)
+- Names should be self-documenting and clearly indicate purpose
+- Keep naming consistent across related entities
 
 ---
-- Use **descriptive names** that convey intent.
-- Avoid abbreviations unless widely understood (e.g., `id` is fine, but `usr` is not).
-- Prefix private variables with an underscore (`_`).
-- Start types and interfaces with uppercase letter (e.g., `User`)
-- Suffix types and interfaces with "Prop" keyword (e.g., `UserProp`)
-- Use camelCase for functions and variable names.
-- Use PascalCase for component names.
-- Use kebab-case for file and directory names.
 
-**@Typing:**
+## ✏️ TypeScript
+
+### Type Definitions
+| Practice | Do | Don't | Reason |
+|----------|----|----|--------|
+| Type Annotations | `function foo(): BazType` | `function foo()` | Helps compiler work faster with explicit types |
+| Type Composition | `interface Foo extends Bar, Baz` | `type Foo = Bar & Baz` | Interfaces create cached, flat object types |
+| Base Types | `interface Animal { ... }` | `type Animal = Dog \| Cat` | Reduces type comparison complexity |
+| Complex Types | `type ComplexType = { ... }` | Inline complex types | Named types are more compact and cacheable |
+
+### Compiler Configuration
+| Flag | Purpose | Impact |
+|------|---------|--------|
+| `--incremental` | Save compilation state | Recompiles only changed files |
+| `--skipLibCheck` | Skip `.d.ts` checking | Faster compilation by skipping verified types |
+| `--strictFunctionTypes` | Optimize type checks | Reduces assignability checks between types |
+
+### Best Practices
+- Use explicit return types on exported functions
+- Prefer interfaces over type intersections for better caching
+- Name complex types instead of using anonymous types
+- Use base types instead of large union types
+- Keep type hierarchies shallow when possible
+- Use **ES6+ syntax**: arrow functions, destructuring, template literals, etc.
+- Avoid `any` unless absolutely necessary. Use strict and explicit typing.
+- Follow [Typescript's Performance Rules](https://github.com/microsoft/TypeScript/wiki/Performance)
+
+### Example
 ```typescript
-// Good
-const userList: User[] = [];
-
-// Bad
-const ul: any = [];
-```
-
-**@Components:**
-```typescript
-// ✅ Do: Functional components
-export function Button({ label, onClick }: ButtonProps) {
-  return <button onClick={...}>{label}</button>
+// ✅ Do: Use interfaces and explicit types
+interface UserData {
+  id: string;
+  name: string;
 }
 
-// ❌ Don't: Class components
-class Button extends Component { ... }
+// ✅ Do: Use ES6+ syntax with strict typing
+function fetchUser(id: string): Promise<UserData> {
+  return inFetch(`/users/${id}`);
+}
 ```
 
----
+```typescript
+// ❌ Don't: Use type intersections and implicit types
+type UserData = BaseUser & {
+  extraData: unknown;
+}
+
+// ❌ Don't: Use type intersections and implicit types
+function fetchUser(id) {
+  return inFetch(`/users/${id}`);
+}
+```
+
 
 ## 🧪 Test Structure and Organization
 
@@ -200,7 +227,9 @@ describe('fetchUser', () => {
     await expect(fetchUser('')).rejects.toThrow('Invalid user ID');
   });
 });
+```
 
+```typescript
 // ❌ Don't: Vague test names or incomplete coverage
 test({
   name: "button test",
@@ -209,8 +238,6 @@ test({
   }
 });
 ```
-
----
 
 ## 📝 Comments
 - **When to Comment**:
@@ -227,7 +254,7 @@ test({
  * @returns A promise resolving to the user object.
  */
 function fetchUser(id: string): Promise<User> {
-  return api.get(`/users/${id}`);
+  return inFetch(`/users/${id}`);
 }
 ```
 

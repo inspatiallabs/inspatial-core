@@ -25,7 +25,7 @@ _🎨 Use InSpatial design system in tailwind as a simple preset_
 ## 📦 Install InSpatial Tailwind Config
 
 ```bash
-deno install @inspatial/tailwind-config tailwindcss
+deno add jsr:@inspatial/tailwind-config tailwindcss
 ```
 
 ---
@@ -146,15 +146,6 @@ To begin your journey with InSpatial Core, visit our comprehensive documentation
 
 We welcome contributions from the community! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
 
-## 🚀 Release Channels
-
-Choose the release channel that best fits your needs:
-
-| Channel        | Description                           | Installation                          |
-| -------------- | ------------------------------------- | ------------------------------------- |
-| 🟢 **Stable**  | Production-ready              | `deno install @inspatial/tailwind-config`         |
-| 🟡 **Preview** | Beta features                   | `deno install @inspatial/tailwind-config@preview` |
-| 🔴 **Canary**  | Experimental | `deno install @inspatial/tailwind-config@canary`  |
 
 ---
 

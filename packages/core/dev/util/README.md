@@ -70,7 +70,40 @@ InSpatial util is your Swiss Army knife for universal and spatial application de
 
 These features make InSpatial util a powerful toolkit for developers working on universal and spatial applications.
 
----
+
+
+## 📦 Install InSpatial Util:
+
+Choose your preferred package manager:
+
+```bash
+deno install jsr:@inspatial/util
+```
+
+## 
+
+```bash
+npx jsr add @inspatial/util
+```
+
+## 
+
+```bash
+yarn dlx jsr add @inspatial/util
+```
+
+## 
+
+```bash
+pnpm dlx jsr add @inspatial/util
+```
+
+## 
+
+```bash
+bunx jsr add @inspatial/util
+```
+
 
 ## 🛠️ Available Utilities
 
@@ -118,38 +151,6 @@ InSpatial util includes the following utility functions:
 40. `difference`: Calculates the difference between two datasets.
 
 For detailed usage and parameters of each utility, please refer to the source code or our comprehensive documentation.
-
----
-
-## 📦 Install InSpatial Util:
-
-```bash
-deno install jsr:@inspatial/util
-```
-
-## 
-
-```bash
-npx jsr add @inspatial/util
-```
-
-## 
-
-```bash
-yarn dlx jsr add @inspatial/util
-```
-
-## 
-
-```bash
-pnpm dlx jsr add @inspatial/util
-```
-
-## 
-
-```bash
-bunx jsr add @inspatial/util
-```
 
 ---
 

@@ -68,19 +68,44 @@ A powerful, type-safe key-value store built with schema validation at compile ti
 - 📊 Queue processing with middleware support
 - 👀 Real-time data watching capabilities
 
+
+## 📦 Install InSpatial KV:
+
+Choose your preferred package manager:
+
+```bash
+deno install jsr:@inspatial/kv
+```
+
+## 
+
+```bash
+npx jsr add @inspatial/kv
+```
+
+## 
+
+```bash
+yarn dlx jsr add @inspatial/kv
+```
+
+## 
+
+```bash
+pnpm dlx jsr add @inspatial/kv
+```
+
+## 
+
+```bash
+bunx jsr add @inspatial/kv
+```
 ---
 
 ## 🛠️ Usage
 
-## 💡 Step-by-Step Usage Guide
-
 Follow these simple steps to get started with **InSpatial KV** in your Deno project:
 
-#### Install InSpatial KV:
-
-```bash
-deno install @inspatial/kv
-```
 
 #### 1. **Define Your Schema**
 

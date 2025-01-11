@@ -52,7 +52,7 @@ _Reality is your canvas_
 
 ---
 
-## 🎨 InSpatial Theme
+## 🎨 InSpatial Theme (🟡 Preview)
 
 A powerful, type-safe and headless theming system for Universal and Spatial applications with support for custom fonts, color schemes, and dynamic theme generation - can be extended to build your own custom component Library.
 
@@ -68,6 +68,39 @@ A powerful, type-safe and headless theming system for Universal and Spatial appl
 - 🔒 Type-safe theme configuration and validation
 - 🚀 Optimized font loading and fallback strategies
 - 🧩 Modular and extensible architecture
+
+
+## 📦 Install InSpatial Theme:
+
+Choose your preferred package manager:
+
+```bash
+deno install jsr:@inspatial/theme
+```
+
+## 
+
+```bash
+npx jsr add @inspatial/theme
+```
+
+## 
+
+```bash
+yarn dlx jsr add @inspatial/theme
+```
+
+## 
+
+```bash
+pnpm dlx jsr add @inspatial/theme
+```
+
+## 
+
+```bash
+bunx jsr add @inspatial/theme
+```
 
 ## 🛠️ Usage
 
